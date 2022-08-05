@@ -1,0 +1,11 @@
+html {
+  color-scheme: light;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}

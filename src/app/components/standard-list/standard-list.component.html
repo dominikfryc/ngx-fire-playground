@@ -1,0 +1,12 @@
+<ng-container *ngIf="users$ | async as users; else loading">
+  <h2>Standard list</h2>
+  <ul>
+    <li *ngFor="let user of users">
+      <a [routerLink]="['/standard/', user.id]">{{ user.name }}</a>
+    </li>
+    <li><a routerLink="/standard/detail">Not found</a></li>
+  </ul>
+</ng-container>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

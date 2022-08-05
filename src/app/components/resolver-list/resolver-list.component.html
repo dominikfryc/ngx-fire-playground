@@ -1,0 +1,9 @@
+<ng-container *ngIf="users$ | async as users">
+  <h2>Resolver list</h2>
+  <ul>
+    <li *ngFor="let user of users">
+      <a [routerLink]="['/resolver/', user.id]">{{ user.name }}</a>
+    </li>
+    <li><a routerLink="/resolver/detail">Not found</a></li>
+  </ul>
+</ng-container>

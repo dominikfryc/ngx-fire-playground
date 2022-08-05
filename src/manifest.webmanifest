@@ -1,0 +1,48 @@
+{
+  "name": "NGX Fire Playground",
+  "short_name": "Playground",
+  "description": "NGX Fire Playground is a sample application for testing new Angular and Firebase concepts.",
+  "categories": [
+    "education",
+    "utilities"
+  ],
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "orientation": "any",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./?pwa=true",
+  "id": "./?pwa=true",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/screenshots/screenshot1.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "label": "Screenshot 1"
+    },
+    {
+      "src": "assets/screenshots/screenshot2.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "label": "Screenshot 2"
+    },
+    {
+      "src": "assets/screenshots/screenshot3.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "label": "Screenshot 3"
+    }
+  ]
+}

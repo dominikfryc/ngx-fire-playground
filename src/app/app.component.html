@@ -1,0 +1,35 @@
+<h1>NGX Fire Playground</h1>
+<ul>
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="resolver">Resolver list</a></li>
+  <li><a routerLink="standard">Standard list</a></li>
+</ul>
+<label style="display: block">
+  <input type="checkbox" [(ngModel)]="enabled" /> Enable loading indicator
+</label>
+<strong style="display: block" *ngIf="loading && enabled">Loading...</strong>
+<router-outlet *ngIf="!loading || !enabled"></router-outlet>
+<hr>
+<h3>Firebase Remote Config</h3>
+<div>{{ greeting }}</div>
+<h3>Firebase Push Notifications</h3>
+<div *ngIf="!notificationPermission || !swPush.isEnabled; else notificationsAvailable">
+  <button type="button" disabled>Enable notifications</button>
+  Push notifications are not supported in the browser.
+</div>
+<ng-template #notificationsAvailable>
+  <div *ngIf="notificationPermission === 'denied'; else notificationsNotDenied">
+    <button type="button" disabled>Enable notifications</button>
+    Push notifications are blocked in the browser.
+  </div>
+  <ng-template #notificationsNotDenied>
+    <button *ngIf="(swPush.subscription | async) === null" type="button" (click)="enableNotifications()">Enable
+      notifications</button>
+    <button *ngIf="(swPush.subscription | async)" type="button" (click)="disableNotifications()">Disable
+      notifications</button>
+  </ng-template>
+</ng-template>
+<ng-container *ngIf="deferredPrompt">
+  <h3>PWA Installation</h3>
+  <button type="button" (click)="installApp()">Install</button>
+</ng-container>
