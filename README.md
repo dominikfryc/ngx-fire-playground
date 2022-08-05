@@ -20,3 +20,4 @@ List of the currently implemented concepts:
 - Firebase Hosting Caching
 - Firebase Performance Monitoring with Custom Traces
 - Firebase Remote Config
+- GitHub Actions Deployment
