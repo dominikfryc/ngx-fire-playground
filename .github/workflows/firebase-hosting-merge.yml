@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@master
-      - name: Install Dependencies
+      - name: Install Application Dependencies
         run: npm ci
       - name: Build Application
         run: npm run prerender
@@ -27,7 +27,6 @@ jobs:
       - name: Deploy to Firebase Cloud Functions
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only functions
+          args: deploy --only functions --project ngx-fire-playground --json
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_NGX_FIRE_PLAYGROUND }}
-          PROJECT_ID: ngx-fire-playground
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
