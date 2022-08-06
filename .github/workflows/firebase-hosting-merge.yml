@@ -25,8 +25,8 @@ jobs:
           channelId: live
           projectId: ngx-fire-playground
       - name: Install Functions Dependencies
+        working-directory: functions
         run: npm ci
-        working_directory: functions
       - name: Deploy to Firebase Cloud Functions
         run: npx firebase-tools deploy --only functions --project ngx-fire-playground --json
         env:
