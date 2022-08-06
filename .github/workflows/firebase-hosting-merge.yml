@@ -25,12 +25,9 @@ jobs:
           channelId: live
           projectId: ngx-fire-playground
       - name: Install Functions Dependencies
-        run: |
-          cd functions
-          npm ci
+        working_directory: functions
+        run: npm ci
       - name: Deploy to Firebase Cloud Functions
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only functions --project ngx-fire-playground --json
+        run: npx firebase-tools deploy --only functions --project ngx-fire-playground --json
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
