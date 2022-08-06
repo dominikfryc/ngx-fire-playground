@@ -24,6 +24,10 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NGX_FIRE_PLAYGROUND }}"
           channelId: live
           projectId: ngx-fire-playground
+      - name: Install Functions Dependencies
+        run: |
+          cd functions
+          npm ci
       - name: Deploy to Firebase Cloud Functions
         uses: w9jds/firebase-action@master
         with:
